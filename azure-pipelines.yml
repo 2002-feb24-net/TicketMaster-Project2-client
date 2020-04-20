@@ -37,21 +37,6 @@ stages:
       artifact: app
       displayName: artifact publish app
 
-  - job: test
-
-    pool:
-      vmImage: ubuntu-latest
-
-    steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: $(nodeVersion)
-      displayName: node $(nodeVersion)
-
-    - script: npm ci
-      workingDirectory: $(appDir)
-      displayName: npm install
-
 - stage: deploy
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   dependsOn: build
