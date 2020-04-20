@@ -1,3 +1,3 @@
 # TicketMaster-Project2-client
 
-#### Morgan, Paul S, and Shawn ####
+#### Morgan, Pauls, and Shawn ####
