@@ -42,7 +42,7 @@ stages:
       artifact: app
       displayName: artifact publish app
 
-      - stage: deploy
+- stage: deploy
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   dependsOn: build
 
