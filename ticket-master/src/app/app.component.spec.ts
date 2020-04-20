@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-ticket-master'`, () => {
+  it(`should have as title 'ticket-master'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-ticket-master');
+    expect(app.title).toEqual('ticket-master');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-ticket-master app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ticket-master app is running!');
   });
 });
