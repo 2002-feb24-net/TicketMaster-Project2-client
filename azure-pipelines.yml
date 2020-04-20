@@ -78,5 +78,5 @@ stages:
               azureSubscription: 'projtwo'
               appType: 'webAppLinux'
               WebAppName: 'projtwo'
-              packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              packageForLinux: $(Pipeline.Workspace)/app
               RuntimeStack: 'NODE|12-lts'
