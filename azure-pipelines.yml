@@ -76,7 +76,8 @@ stages:
             inputs:
               ConnectionType: 'AzureRM'
               azureSubscription: 'projtwo'
-              appType: 'webAppLinux'
+              # appType: 'webAppLinux'
+              appType: webApp 
               WebAppName: 'projtwo'
               packageForLinux: $(Pipeline.Workspace)/app
               RuntimeStack: 'NODE|12-lts'
