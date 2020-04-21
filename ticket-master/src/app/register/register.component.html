@@ -1,51 +1,63 @@
 <div class="pt-3 px-4">
   <h2>Register</h2>
-  <!--<label>
-    First Name:
-    <input type="text" [formControl]="name">
-  </label>
   <br />
   <br />
-  <label>
-    Last Name:
-    <input type="text" [formControl]="name">
-  </label>
-  <br />
-  <br />
-  <label>
-    Address:
-    <input type="text" [formControl]="name">
-  </label>
-  <br />
-  <br />
-  <label>
-    City:
-    <input type="text" [formControl]="name">
-  </label>
-  <br />
-  <br />
-  <label>
-    State:
-    <input type="text" [formControl]="name">
-  </label>
-  <br />
-  <br />
-  <label>
-    Phone Number:
-    <input type="text" [formControl]="name">
-  </label>-->
-  <div class="ml-3">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label>
+      First Name:
+
+      <!-- In order to add validations, we want to make changes here and in the .ts file -->
+      <!-- If we add validation here, then they submit button can't be clicked until the fields have valid data -->
+      <!-- if we want to make a field required: -->
+      <!-- <input type="text" formControlName="firstName" required> -->
+
+      <input type="text" formControlName="firstName">
+    </label>
+    <br />
+    <br />
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+    <br />
+    <br />
+    <label>
+      Address:
+      <input type="text" formControlName="address">
+    </label>
+    <br />
+    <br />
+    <label>
+      City:
+      <input type="text" formControlName="city">
+    </label>
+    <br />
+    <br />
+    <label>
+      State:
+      <input type="text" formControlName="state">
+    </label>
+    <br />
+    <br />
+    <label>
+      Phone Number:
+      <input type="text" formControlName="phone">
+    </label>
+    <br />
+    <br />
     <label>
       Email Address:
-      <input type="text" [formControl]="name">
+      <input type="text" formControlName="email">
+
     </label>
     <br />
     <br />
     <label>
       Password:
-      <input type="text" [formControl]="name">
+      <input type="password" formControlName="password">
     </label>
-    <br />
-    <br />
-  </div>
+    <p>
+      <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+    </p>
+</form>
 </div>
