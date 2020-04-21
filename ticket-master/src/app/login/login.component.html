@@ -2,16 +2,19 @@
   <h2>Login</h2>
   <br />
   <br />
-  <label>
-    Email Address:
-    <input type="text" [formControl]="name">
-  </label>
-  <br />
-  <br />
-  <label>
-    Password:
-    <input type="text" [formControl]="name">
-  </label>
-  <br />
-  <br />
-</div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label>
+      Email Address:
+      <input type="text" formControlName="email" required>
+    </label>
+    <br />
+    <br />
+    <label>
+      Password:
+      <input type="password" formControlName="password" required>
+    </label>
+    <p>
+      <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+    </p>
+  </form>
+  </div>
