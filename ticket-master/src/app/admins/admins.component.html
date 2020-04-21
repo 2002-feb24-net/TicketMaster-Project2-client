@@ -1,0 +1,17 @@
+<div class="pt-3 px-4">
+  <h2>Admins</h2>
+  <!--<button (click)="getAdmins()">Refresh</button>
+  <br />
+  <br />-->
+  <div *ngIf="admins.length > 0">
+    <ol>
+      <li *ngFor="let admin of admins">{{ admin.firstName }} {{admin.lastName}} (support level: {{admin.supportLevel}})</li>
+    </ol>
+  </div>
+  <div *ngIf="admins.length === 0">
+    no admins found
+  </div>
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+</div>

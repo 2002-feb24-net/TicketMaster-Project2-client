@@ -16,6 +16,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { HttpClientModule } from '@angular/common/http';
+import { AdminsComponent } from './admins/admins.component';
+import { OpenticketComponent } from './openticket/openticket.component';
+import { CloseticketComponent } from './closeticket/closeticket.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -24,7 +29,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
+
     ReactiveFormsModule,
+
   ],
   declarations: [
     AppComponent,
@@ -35,6 +42,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    AdminsComponent,
+    OpenticketComponent,
+    CloseticketComponent,
   ],
   bootstrap: [AppComponent]
 })
