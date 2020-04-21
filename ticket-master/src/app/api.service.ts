@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import User from './models/user';
 import Admin from './models/admin';
+import Ticket from './models/ticket';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class ApiService {
       .toPromise();
   }
 
+  getTickets() {
+    return this.http.get<Ticket[]>(`${this.baseUrl}api/tickets`)
+      .toPromise();
+  }
 
 
 
