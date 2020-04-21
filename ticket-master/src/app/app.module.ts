@@ -18,6 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AdminsComponent } from './admins/admins.component';
+import { OpenticketComponent } from './openticket/openticket.component';
+import { CloseticketComponent } from './closeticket/closeticket.component';
 
 @NgModule({
   imports: [
@@ -39,6 +41,8 @@ import { AdminsComponent } from './admins/admins.component';
     HeaderComponent,
     FooterComponent,
     AdminsComponent,
+    OpenticketComponent,
+    CloseticketComponent,
   ],
   bootstrap: [AppComponent]
 })

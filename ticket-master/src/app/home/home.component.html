@@ -20,11 +20,22 @@
         <button type="button" class="btn btn-info float-left">Sign Up</button>
       </div>
       <div class="col">
-        <button type="button" class="btn btn-info" routerLink="/users">View Users</button>
+        <button type="button" id="button1" class="btn btn-group btn-info" (click)="checked = true;">View Users</button>
         &nbsp;
-        <button type="button" class="btn btn-info" routerLink="/admins">View Administrators</button>
+        <button type="button" id="button2" class="btn btn-group btn-info" (click)="checked = false;">View Administrators</button>
         <br />
-        <app-users></app-users>
+  
+
+
+
+        <div *ngIf="checked === true"><app-users></app-users></div>
+        <div *ngIf="checked === false"><app-admins></app-admins></div>
+
+
+
+
+
+
       </div>
 
     </div>
