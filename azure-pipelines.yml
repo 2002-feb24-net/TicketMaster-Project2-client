@@ -82,11 +82,3 @@ stages:
               WebAppName: ticketmasterproject2
               packageForLinux: $(Pipeline.Workspace)/app
             displayName: azure app service deploy
-
-# - task: AzureRmWebAppDeployment@4
-#   inputs:
-#     ConnectionType: 'AzureRM'
-#     azureSubscription: 'Azure subscription 1(8a330e65-2e41-410e-b0f2-1d3dc58edcec)'
-#     appType: 'webApp'
-#     WebAppName: 'ticketmasterproject2'
-#     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
