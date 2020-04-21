@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
-import User from '../models/user';
+import Admin from '../models/admin';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-admins',
+  templateUrl: './admins.component.html',
+  styleUrls: ['./admins.component.css']
 })
-export class UsersComponent implements OnInit {
-  users: User[] = [];
+export class AdminsComponent implements OnInit {
+  admins: Admin[] = [];
   error: string | undefined;
 
   createNoteForm = this.formBuilder.group({
@@ -19,19 +19,19 @@ export class UsersComponent implements OnInit {
 
   // the ctor is for DI and for any setup that doesn't need the DOM ready
   constructor(
-    private usersApi: ApiService,
+    private adminsApi: ApiService,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.getUsers();
+    this.getAdmins();
   }
 
-  getUsers() {
-    return this.usersApi.getUsers()
+  getAdmins() {
+    return this.adminsApi.getAdmins()
       .then(
-        users => {
-          this.users = users;
+        admins => {
+          this.admins = admins;
           this.resetError();
         }, // success
         error => {
@@ -49,7 +49,7 @@ export class UsersComponent implements OnInit {
       // The response body may contain clues as to what went wrong,
       this.error = `Backend returned code ${error.status}, body was: ${error.error}`;
     }
-    // return an observable with a user-facing error message
+    // return an observable with a admin-facing error message
     // this.error = 'Something bad happened; please try again later.';
   }
 

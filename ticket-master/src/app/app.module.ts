@@ -16,6 +16,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { HttpClientModule } from '@angular/common/http';
+import { AdminsComponent } from './admins/admins.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -34,6 +38,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    AdminsComponent,
   ],
   bootstrap: [AppComponent]
 })

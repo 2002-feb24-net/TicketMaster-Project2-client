@@ -1,7 +1,36 @@
 <div class="pt-3 px-4">
-  <h2>Home Page</h2>
+  <h2>Welcome to Ticket Master!</h2>
   <br />
   <br />
-  <p>Welcome to the application!</p>
-  <p>trigger test!</p>
-</div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <br />
+        <label>
+          Email Address:
+          <input type="text" [formControl]="name">
+        </label>
+        <label>
+          Password:
+          <input type="text" [formControl]="name">
+        </label>
+        <br />
+        <button type="button" class="btn btn-info float-left">Sign Up</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-info" routerLink="/users">View Users</button>
+        &nbsp;
+        <button type="button" class="btn btn-info" routerLink="/admins">View Administrators</button>
+        <br />
+        <app-users></app-users>
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
