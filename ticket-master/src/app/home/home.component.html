@@ -1,47 +1,22 @@
-<div class="pt-3 px-4">
+<div class="pt-3 px-4" style="min-height:600px;">
   <h2>Welcome to Ticket Master!</h2>
   <br />
   <br />
-
-
   <div class="container">
     <div class="row">
+      <!-- Register Column -->
       <div class="col">
-        <br />
-        <label>
-          Email Address:
-          <input type="text" [formControl]="name">
-        </label>
-        <label>
-          Password:
-          <input type="text" [formControl]="name">
-        </label>
-        <br />
-        <button type="button" class="btn btn-info float-left">Sign Up</button>
+        <app-register></app-register>
+        <button type="button" class="btn btn-info float-left ml-4">Sign Up</button>
       </div>
+      <!-- Users/Admins Column-->
       <div class="col">
-        <button type="button" id="button1" class="btn btn-group btn-info" (click)="checked = true;">View Users</button>
+        <div *ngIf="checked === true"><app-users></app-users></div>
+        <div *ngIf="checked === false"><app-admins></app-admins></div>
+        <button type="button" id="button1" class="btn btn-group btn-info ml-4" (click)="checked = true;">View Users</button>
         &nbsp;
         <button type="button" id="button2" class="btn btn-group btn-info" (click)="checked = false;">View Administrators</button>
         <br />
-  
-
-
-
-        <div *ngIf="checked === true"><app-users></app-users></div>
-        <div *ngIf="checked === false"><app-admins></app-admins></div>
-
-
-
-
-
-
       </div>
-
     </div>
-
-
-
-
-
   </div>
