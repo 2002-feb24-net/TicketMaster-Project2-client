@@ -8,7 +8,7 @@ import { Validators } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-  export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   registerForm = this.builder.group({
 
@@ -26,7 +26,7 @@ import { Validators } from '@angular/forms';
     password: [''],
   })
 
-  constructor(private builder: FormBuilder) {}
+  constructor(private builder: FormBuilder) { }
 
   ngOnInit(): void {
   }

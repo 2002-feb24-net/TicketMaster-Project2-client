@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import User from './models/user';
 import Admin from './models/admin';
 import Ticket from './models/ticket';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,7 @@ export class ApiService {
       .toPromise();
   }
 
+  
 
 
 

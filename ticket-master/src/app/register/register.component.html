@@ -1,7 +1,5 @@
 <div class="pt-3 px-4">
   <h2>Register</h2>
-  <br />
-  <br />
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <label>
       First Name:
@@ -56,8 +54,11 @@
       Password:
       <input type="password" formControlName="password">
     </label>
+    <br />
+    <br />
     <p>
       <button type="submit" [disabled]="!registerForm.valid">Submit</button>
     </p>
-</form>
+    <br />
+  </form>
 </div>

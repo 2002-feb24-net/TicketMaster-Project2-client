@@ -29,9 +29,7 @@ import { CloseticketComponent } from './closeticket/closeticket.component';
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
-
-    ReactiveFormsModule,
-
+    HttpClientModule
   ],
   declarations: [
     AppComponent,

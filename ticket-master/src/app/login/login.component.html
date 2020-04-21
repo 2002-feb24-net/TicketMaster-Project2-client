@@ -1,7 +1,5 @@
 <div class="pt-3 px-4">
   <h2>Login</h2>
-  <br />
-  <br />
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <label>
       Email Address:
@@ -13,8 +11,10 @@
       Password:
       <input type="password" formControlName="password" required>
     </label>
+    <br />
+    <br />
     <p>
       <button type="submit" [disabled]="!loginForm.valid">Submit</button>
     </p>
   </form>
-  </div>
+</div>

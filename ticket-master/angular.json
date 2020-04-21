@@ -127,10 +127,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "ticket-master",
-  "cli": {
-    "analytics": false
-  }
+    }},
+  "defaultProject": "ticket-master"
 }
