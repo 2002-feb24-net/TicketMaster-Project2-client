@@ -6,6 +6,8 @@ import Admin from './models/admin';
 import Ticket from './models/ticket';
 import { Observable } from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,7 +32,12 @@ export class ApiService {
       .toPromise();
   }
 
-  
+  createUser(user: User) {
+    console.warn(user.firstName);
+    return this.http.post<User>(`${this.baseUrl}api/users`, user)
+      .toPromise();
+
+  }
 
 
 
