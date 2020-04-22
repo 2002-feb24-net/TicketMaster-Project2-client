@@ -1,1 +1,12 @@
-<p>logout works!</p>
+<app-header></app-header>
+<div class="pt-3 px-4 text-center" style="min-height:500px;">
+  <h2>Logout</h2>
+  <br />
+  <br />
+  <br />
+  <form [formGroup]="logoutForm" (ngSubmit)="onSubmit()">
+    <p>
+      <button type="submit" (click)="email = 'Guest'">Log Out</button>
+    </p>
+  </form>
+</div>

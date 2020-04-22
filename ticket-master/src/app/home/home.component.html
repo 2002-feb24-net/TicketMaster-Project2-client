@@ -1,21 +1,23 @@
-<div class="pt-3 px-4" style="min-height:600px;">
+<app-header></app-header>
+<div class="pt-3 px-4" style="min-height:450px;">
   <h2>Welcome to Ticket Master!</h2>
+  <br />
   <br />
   <div class="container">
     <div class="row">
       <!-- Register Column -->
       <div class="col">
-        <p>Hello!</p>
+        <img src="../assets/homeicon.png" style="width:400px;height:400px;">
       </div>
       <!-- Users/Admins Column-->
       <div class="col">
         <div *ngIf="checked === true"><app-users></app-users></div>
         <div *ngIf="checked === false"><app-admins></app-admins></div>
-        <button type="button" id="button1" class="btn btn-group btn-info ml-4" (click)="checked = true;">View Users</button>
+        <button *ngIf="checked === false" type="button" id="button1" class="btn btn-group btn-info ml-4" (click)="checked = true;">View Users</button>
         &nbsp;
-        <button type="button" id="button2" class="btn btn-group btn-info" (click)="checked = false;">View Administrators</button>
+        <button *ngIf="checked === true" type="button" id="button2" class="btn btn-group btn-info" (click)="checked = false;">View Administrators</button>
         </div>
-
     </div>
   </div>
 </div>
+<br />

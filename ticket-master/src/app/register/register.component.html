@@ -1,14 +1,10 @@
-<div class="pt-3 px-4">
+<app-header></app-header>
+<div class="pt-3 px-4 text-center" style="min-height:600px;">
   <h2>Register</h2>
+  <br />
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <label>
       First Name:
-
-      <!-- In order to add validations, we want to make changes here and in the .ts file -->
-      <!-- If we add validation here, then they submit button can't be clicked until the fields have valid data -->
-      <!-- if we want to make a field required: -->
-      <!-- <input type="text" formControlName="firstName" required> -->
-
       <input type="text" formControlName="firstName">
     </label>
     <br />
@@ -46,7 +42,6 @@
     <label>
       Email Address:
       <input type="text" formControlName="email">
-
     </label>
     <br />
     <br />

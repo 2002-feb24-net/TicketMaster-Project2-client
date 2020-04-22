@@ -1,8 +1,5 @@
 <div class="pt-3 px-4">
   <h2>Users</h2>
-  <!--<button (click)="getUsers()">Refresh</button>
-  <br />
-  <br />-->
   <div *ngIf="users.length > 0">
     <ol>
       <li *ngFor="let user of users">{{ user.firstName }} {{user.lastName}}</li>

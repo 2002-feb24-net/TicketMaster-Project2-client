@@ -1,4 +1,5 @@
-<div class="pt-3 px-4 text-center">
+<app-header></app-header>
+<div class="pt-3 px-4 text-center" style="min-height:500px;">
   <h2 class="d-inline">Account</h2>
   <br />
   <br />
@@ -6,9 +7,10 @@
   <br />
   <br />
   <br />
-  <a routerLink="/login">Login</a><br /><br />
-  <a routerLink="/logout">Logout</a><br /><br />
-  <a routerLink="/register">Register</a><br /><br />
-  <a routerLink="/update">Update</a><br /><br />
+  <div><p>Hello, {{email}}!</p></div>
+  <div *ngIf="email == 'Guest'"><a routerLink="/login">Login</a><br /><br /></div>
+  <div *ngIf="email == 'Guest'"><a routerLink="/register">Register</a><br /><br /></div>
+  <div *ngIf="email != 'Guest'"><a routerLink="/logout">Logout</a><br /><br /></div>
+  <div *ngIf="email != 'Guest'"><a routerLink="/update">Update</a><br /><br /></div>
   <br />
 </div>

@@ -1,16 +1,22 @@
-<div class="pt-3 px-4">
+<app-header></app-header>
+<div class="pt-3 px-4 text-center" style="min-height:500px;">
+  <br />
   <h2>Login</h2>
+  <br />
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <br />
     <label>
       Email Address:
       <input type="text" formControlName="email" required>
     </label>
     <br />
     <br />
+    <br />
     <label>
       Password:
       <input type="password" formControlName="password" required>
     </label>
+    <br />
     <br />
     <br />
     <p>
