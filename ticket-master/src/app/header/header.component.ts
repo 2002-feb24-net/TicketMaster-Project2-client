@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   }
   getCookie() {
     let tempemail = this.cookieService.get('cookieEmail');
-    if (tempemail = "") {
+    if (tempemail.length < 1) {
       this.cookieService.set('cookieEmail', 'Guest');
     }
 
