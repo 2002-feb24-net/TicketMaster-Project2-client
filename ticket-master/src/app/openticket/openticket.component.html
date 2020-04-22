@@ -1,7 +1,6 @@
 <div class="pt-3 px-4" style="min-height:600px;">
   <div class="container">
     <div class="row">
-      <!-- Login Column -->
       <div class="col">
         <h2>Open A Ticket</h2>
         <p>Must be a registered user.</p>
@@ -9,10 +8,45 @@
         <br />
         <br />
       </div>
-      <!-- Other Column-->
+
       <div class="col">
           <h2>column placeholder</h2>
       </div>
     </div>
   </div>
 </div>
+
+<!--
+<div class="pt-3 px-4">
+  <h2>Create Ticket</h2>
+  <form [formGroup]="createTicketForm" (ngSubmit)="onSubmit()">
+    <label>
+      Title:
+      <input type="text" formControlName="title">
+    </label>
+    <br />
+    <br />
+    <label>
+      Category:
+      <input type="text" formControlName="category">
+    </label>
+    <br />
+    <br />
+    <label>
+      Priority:
+      <input type="text" formControlName="priority">
+    </label>
+    <br />
+    <br />
+    <label>
+      Details:
+      <input type="text" formControlName="details">
+    </label>
+    <br />
+    <br />
+    <p>
+      <button type="submit" [disabled]="!createTicketForm.valid">Submit</button>
+    </p>
+    <br />
+  </form>
+</div> -->

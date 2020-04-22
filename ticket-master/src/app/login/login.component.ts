@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +15,14 @@ export class LoginComponent implements OnInit {
 
     email: ['', Validators.required],
     password: ['', Validators.required]
+
   })
 
-  constructor(private builder: FormBuilder) { }
+
+  constructor(
+    private builder: FormBuilder,
+    private cookieService: CookieService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +30,9 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.loginForm.value);
+
+    this.cookieService.set('cookieEmail', this.loginForm.value.email);
+    this.cookieService.set('cookiePassword', this.loginForm.value.password);
   }
 
 }

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -30,6 +31,9 @@ import { CloseticketComponent } from './closeticket/closeticket.component';
     NgbModule,
     FontAwesomeModule,
     HttpClientModule
+  ],
+  providers: [
+    CookieService,
   ],
   declarations: [
     AppComponent,

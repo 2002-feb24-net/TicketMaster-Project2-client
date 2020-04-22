@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-closeticket',
@@ -8,9 +11,17 @@ import { FormControl } from '@angular/forms';
 })
 export class CloseticketComponent implements OnInit {
   name = new FormControl('');
-  constructor() { }
+  constructor(
+    private builder: FormBuilder,
+    private cookieService: CookieService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  getCookie(){
+    this.cookieService.get('cookieEmail');
+    this.cookieService.get('cookiePassword');
   }
 
 }
