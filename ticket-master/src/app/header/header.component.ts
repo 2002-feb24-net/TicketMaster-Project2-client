@@ -9,11 +9,20 @@ import { faLaptop } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   isCollapsed = true;
   faLaptop = faLaptop;
-  email = this.cookieService.get('cookieEmail');
+  email = this.getCookie();
+ 
+
   constructor(private cookieService: CookieService) { }
   ngOnInit(): void {
   }
-  getCookie(){
+  getCookie() {
+    let tempemail = this.cookieService.get('cookieEmail');
+    if (tempemail = "") {
+      this.cookieService.set('cookieEmail', 'Guest');
+    }
+
+
     return this.cookieService.get('cookieEmail');
   }
+
 }
