@@ -21,6 +21,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminsComponent } from './admins/admins.component';
 import { OpenticketComponent } from './openticket/openticket.component';
 import { CloseticketComponent } from './closeticket/closeticket.component';
+import { AccountComponent } from './account/account.component';
+import { UpdateticketComponent } from './updateticket/updateticket.component';
+import { SearchticketsComponent } from './searchtickets/searchtickets.component';
+import { LogoutComponent } from './logout/logout.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   imports: [
@@ -47,6 +52,11 @@ import { CloseticketComponent } from './closeticket/closeticket.component';
     AdminsComponent,
     OpenticketComponent,
     CloseticketComponent,
+    AccountComponent,
+    UpdateticketComponent,
+    SearchticketsComponent,
+    LogoutComponent,
+    UpdateComponent,
   ],
   bootstrap: [AppComponent]
 })

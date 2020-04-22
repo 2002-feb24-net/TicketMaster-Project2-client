@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent implements OnInit{
   private cookieValue: string;
-  //title = 'Ticket Master';
+  title = 'Ticket Master';
   constructor(private cookieService: CookieService){}
 
   public ngOnInit(): void {

@@ -1,17 +1,14 @@
-<div class="pt-3 px-4" style="min-height:600px;">
-  <h2>All Tickets</h2>
-  <!--<button (click)="getUsers()">Refresh</button>-->
+<div class="pt-3 px-4 text-center">
+  <h2 class="d-inline">Tickets</h2>
   <br />
   <br />
-  <div *ngIf="tickets.length > 0">
-    <ol>
-      <li *ngFor="let ticket of tickets">=={{ ticket.title }}==<br />{{ticket.details}}<br />Created:{{ticket.datetimeOpened}}<br />Closed:{{ticket.datetimeClosed}}<br />Created By:{{ticket.userId}}(UserID)<br />Assigned To:{{ticket.adminId}}(AdminID)</li>
-    </ol>
-  </div>
-  <div *ngIf="tickets.length === 0">
-    no tickets found
-  </div>
-  <div *ngIf="error" class="error">
-    {{ error }}
-  </div>
+  <fa-icon [icon]="faTicketAlt" class="fa-4x"></fa-icon>
+  <br />
+  <br />
+  <br />
+  <a routerLink="/openticket">Open</a><br /><br />
+  <a routerLink="/closeticket">Close</a><br /><br />
+  <a routerLink="/searchtickets">Search</a><br /><br />
+  <a routerLink="/updateticket">Update</a><br /><br />
+  <br />
 </div>

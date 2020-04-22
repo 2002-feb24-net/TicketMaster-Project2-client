@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { faLaptop } from '@fortawesome/free-solid-svg-icons';
 import { CookieService } from 'ngx-cookie-service';
+import { faLaptop } from '@fortawesome/free-solid-svg-icons';
+
+
 
 @Component({
   selector: 'app-header',
@@ -10,6 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class HeaderComponent implements OnInit {
   isCollapsed = true;
   faLaptop = faLaptop;
+ 
   email = this.cookieService.get('cookieEmail');
 
   constructor(private cookieService: CookieService) { }
