@@ -25,8 +25,11 @@ export class ApiService {
       .toPromise();
   }
   createUser(user: User) {
-    console.warn(user.firstName);
     return this.http.post<User>(`${this.baseUrl}api/users`, user)
+      .toPromise();
+  }
+  openTicket(ticket: Ticket) {
+    return this.http.post<Ticket>(`${this.baseUrl}api/tickets`, ticket)
       .toPromise();
   }
 }

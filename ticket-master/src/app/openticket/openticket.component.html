@@ -1,6 +1,7 @@
 <app-header></app-header>
-<div class="pt-3 px-4" style="min-height:600px;">
+<div class="pt-3 px-4 text-center" style="min-height:600px;">
   <h2>Create Ticket</h2>
+  <br />
   <form [formGroup]="createTicketForm" (ngSubmit)="onSubmit()">
     <label>
       Title:
@@ -16,7 +17,7 @@
     <br />
     <label>
       Priority:
-      <input type="text" formControlName="priority">
+      <input type="number" formControlName="priority">
     </label>
     <br />
     <br />

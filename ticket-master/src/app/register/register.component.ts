@@ -45,6 +45,5 @@ export class RegisterComponent implements OnInit {
       this.cookieService.set('cookieEmail', newUser.email);
       this.cookieService.set('cookiePassword', newUser.password);
     this.usersApi.createUser(newUser);
-    document.getElementById("button1").click();
   }
 }
