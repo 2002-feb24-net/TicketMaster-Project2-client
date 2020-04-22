@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   private baseUrl = environment.baseUrl;
+
   get defaultUserId() { return 1; }
   constructor(private http: HttpClient) { }
   getUsers() {
@@ -32,4 +33,5 @@ export class ApiService {
     return this.http.post<Ticket>(`${this.baseUrl}api/tickets`, ticket)
       .toPromise();
   }
+
 }

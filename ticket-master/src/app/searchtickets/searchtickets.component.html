@@ -6,7 +6,7 @@
   <br />
   <div *ngIf="tickets.length > 0">
     <ol>
-      <li *ngFor="let ticket of tickets">=={{ ticket.title }}==<br />{{ticket.details}}<br />Created:{{ticket.datetimeOpened}}<br />Closed:{{ticket.datetimeClosed}}<br />Created By:{{ticket.userId}}(UserID)<br />Assigned To:{{ticket.adminId}}(AdminID)</li>
+      <li *ngFor="let ticket of tickets">== {{ ticket.title }} == (Status: {{ticket.completed}})<br />{{ticket.details}}<br />Requested By: {{ticket.userRequesterName}}<br />Assigned To: {{ticket.adminAssignedName}}<br />Date Created: {{ticket.datetimeOpened}}<br />Date Closed: {{ticket.datetimeClosed}}<br /><br /><br /></li>
     </ol>
   </div>
   <div *ngIf="tickets.length === 0">

@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'openticket', component: OpenticketComponent },
   { path: 'tickets', component: TicketsComponent },
   { path: 'account', component: AccountComponent },
-  { path: 'searchtickets', component: SearchticketsComponent },
+  { path: 'alltickets', component: SearchticketsComponent },
   { path: 'updateticket', component: UpdateticketComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'update', component: UpdateComponent }

@@ -15,17 +15,18 @@ import { Location } from '@angular/common';
 export class OpenticketComponent implements OnInit {
   createTicketForm = this.builder.group({
     title: [''],
-    category: [''],
+    category: ['something'],
     datetimeOpened: ['2019-01-06T17:16:40'],
     datetimeModified: ['2019-01-06T17:16:40'],
-    datetimeClosed: ['2000-01-01T01:01:01'],
-    deadline: ['2019-05-11T17:16:40'],
+    datetimeClosed: [null],
     priority: [1],
     details: [''],
     userid: [3],
     adminId: [3],
     storeId: [3],
-    completed: [''],
+    completed: ['OPEN'],
+    userRequesterName: [''],
+    adminAssignedName: ['Morgan Hay']
   })
   constructor(
     private usersApi: ApiService,
@@ -46,13 +47,14 @@ export class OpenticketComponent implements OnInit {
       datetimeOpened: this.createTicketForm.get('datetimeOpened')?.value,
       datetimeModified: this.createTicketForm.get('datetimeModified')?.value,
       datetimeClosed: this.createTicketForm.get('datetimeClosed')?.value,
-      deadline: this.createTicketForm.get('deadline')?.value,
       priority: this.createTicketForm.get('priority')?.value,
       details: this.createTicketForm.get('details')?.value,
       userid: this.createTicketForm.get('userid')?.value,
       adminId: this.createTicketForm.get('adminId')?.value,
       storeId: this.createTicketForm.get('storeId')?.value,
-      completed: "NO"
+      userRequesterName: this.cookieService.get('cookieEmail'),
+      adminAssignedName: this.createTicketForm.get('adminAssignedName')?.value,
+      completed: this.createTicketForm.get('completed')?.value
 
     };
     this.usersApi.openTicket(openTicket);

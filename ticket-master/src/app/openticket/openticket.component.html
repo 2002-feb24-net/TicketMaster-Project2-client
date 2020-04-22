@@ -1,8 +1,20 @@
 <app-header></app-header>
 <div class="pt-3 px-4 text-center" style="min-height:600px;">
-  <h2>Create Ticket</h2>
+  <h2>Open Ticket</h2>
   <br />
   <form [formGroup]="createTicketForm" (ngSubmit)="onSubmit()">
+    <label>
+      Priority:
+      <select class="form-control" formControlName="priority">
+        <option>1 - Very Low</option>
+        <option>2 - Low</option>
+        <option>3 - Medium</option>
+        <option>4 - High</option>
+        <option>5 - Very High</option>
+      </select>
+    </label>
+    <br />
+    <br />
     <label>
       Title:
       <input type="text" formControlName="title">
@@ -10,20 +22,8 @@
     <br />
     <br />
     <label>
-      Category:
-      <input type="text" formControlName="category">
-    </label>
-    <br />
-    <br />
-    <label>
-      Priority:
-      <input type="number" formControlName="priority">
-    </label>
-    <br />
-    <br />
-    <label>
       Details:
-      <input type="text" formControlName="details">
+      <textarea class="form-control" rows="5" id="comment" formControlName="details"></textarea>
     </label>
     <br />
     <br />
