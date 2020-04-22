@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
       this.cookieService.set('cookieEmail', 'Guest');
     }
 
-
+    console.warn(this.cookieService.get('cookieEmail'))
     return this.cookieService.get('cookieEmail');
   }
 
