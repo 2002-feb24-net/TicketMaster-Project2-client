@@ -52,7 +52,7 @@ export class OpenticketComponent implements OnInit {
       userid: this.createTicketForm.get('userid')?.value,
       adminId: this.createTicketForm.get('adminId')?.value,
       storeId: this.createTicketForm.get('storeId')?.value,
-      userRequesterName: this.cookieService.get('cookieEmail'),
+      userRequesterName: this.cookieService.get('cookieFullName'),
       adminAssignedName: this.createTicketForm.get('adminAssignedName')?.value,
       completed: this.createTicketForm.get('completed')?.value
 

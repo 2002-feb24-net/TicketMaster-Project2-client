@@ -6,6 +6,7 @@ import { ApiService } from '../api.service';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpErrorResponse } from '@angular/common/http';
 import User from '../models/user';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -13,6 +14,7 @@ import User from '../models/user';
 })
 export class RegisterComponent implements OnInit {
   registerForm = this.builder.group({
+    id: [''],
     firstName: [''],
     lastName: [''],
     address: [''],
@@ -27,7 +29,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private usersApi: ApiService,
     private builder: FormBuilder,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private location: Location
   ) { }
   ngOnInit(): void {
   }
@@ -41,9 +44,19 @@ export class RegisterComponent implements OnInit {
         phoneNumber: this.registerForm.get('phone')?.value,
         email: this.registerForm.get('email')?.value,
         password: this.registerForm.get('password')?.value
-      };
-      this.cookieService.set('cookieEmail', newUser.email);
-      this.cookieService.set('cookiePassword', newUser.password);
+    };
+
     this.usersApi.createUser(newUser);
+    //this.cookieService.set('cookieID', newUser.id.toString());
+    this.cookieService.set('cookieFirstName', newUser.firstName);
+    this.cookieService.set('cookieLastName', newUser.lastName);
+    this.cookieService.set('cookieFullName', newUser.firstName + " " + newUser.lastName);
+    this.cookieService.set('cookieAddress', newUser.address);
+    this.cookieService.set('cookieCity', newUser.city);
+    this.cookieService.set('cookieState', newUser.state);
+    this.cookieService.set('cookiePhoneNumber', newUser.phoneNumber);
+    this.cookieService.set('cookieEmail', newUser.email);
+    this.cookieService.set('cookiePassword', newUser.password);
+      this.location.back();
   }
 }

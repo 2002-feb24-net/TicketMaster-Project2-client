@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class AccountComponent implements OnInit {
   faCogs = faCogs;
   email = this.cookieService.get('cookieEmail');
+  firstName = this.cookieService.get('cookieFirstName');
   constructor(private cookieService: CookieService) { }
   ngOnInit(): void {
   }

@@ -23,8 +23,15 @@ export class LogoutComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-    this.cookieService.set('cookieEmail', "Guest");
-    this.cookieService.set('cookiePassword', "Guest");
+    this.cookieService.set('cookieID', "");
+    this.cookieService.set('cookieFirstName', "Guest");
+    this.cookieService.set('cookieLastName', "");
+    this.cookieService.set('cookieAddress', "");
+    this.cookieService.set('cookieCity', "");
+    this.cookieService.set('cookieState', "");
+    this.cookieService.set('cookiePhoneNumber', "");
+    this.cookieService.set('cookieEmail', "");
+    this.cookieService.set('cookiePassword', "");
     this.location.back();
   }
 }

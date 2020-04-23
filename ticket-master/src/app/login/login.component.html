@@ -7,14 +7,14 @@
     <br />
     <label>
       Email Address:
-      <input type="text" formControlName="email" required>
+      <input [(ngModel)]="email" type="text" formControlName="email" name="email" id="email" required>
     </label>
     <br />
     <br />
     <br />
     <label>
       Password:
-      <input type="password" formControlName="password" required>
+      <input [(ngModel)]="password" type="password" formControlName="password" name="password" id="password" required>
     </label>
     <br />
     <br />
@@ -22,5 +22,10 @@
     <p>
       <button type="submit" [disabled]="!loginForm.valid">Submit</button>
     </p>
+
+
+
   </form>
+  {{this.email}}
+  {{this.password}}
 </div>

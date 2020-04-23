@@ -5,11 +5,15 @@ import User from './models/user';
 import Admin from './models/admin';
 import Ticket from './models/ticket';
 import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   private baseUrl = environment.baseUrl;
+  private searchint;
+  private email;
+  private password;
 
   get defaultUserId() { return 1; }
   constructor(private http: HttpClient) { }
@@ -31,6 +35,28 @@ export class ApiService {
   }
   openTicket(ticket: Ticket) {
     return this.http.post<Ticket>(`${this.baseUrl}api/tickets`, ticket)
+      .toPromise();
+  }
+
+
+  getTicket(output: number) {
+    this.searchint = output;
+    return this.http.get<Ticket>(`${this.baseUrl}api/tickets/ticket,${this.searchint}`)
+      .toPromise();
+  }
+
+
+  closeTicket(output: number, something: Ticket) {
+    this.searchint = output;
+    return this.http.put<Ticket>(`${this.baseUrl}api/tickets/${this.searchint}`, something)
+      .toPromise();
+
+
+  }
+
+
+  getUser(email: string,password: string) {
+    return this.http.get<User>(`${this.baseUrl}api/users/${email},${password}`)
       .toPromise();
   }
 

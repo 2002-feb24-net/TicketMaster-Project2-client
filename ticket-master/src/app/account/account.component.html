@@ -7,10 +7,10 @@
   <br />
   <br />
   <br />
-  <div><p>Hello, {{email}}!</p></div>
-  <div *ngIf="email == 'Guest'"><a routerLink="/login">Login</a><br /><br /></div>
-  <div *ngIf="email == 'Guest'"><a routerLink="/register">Register</a><br /><br /></div>
-  <div *ngIf="email != 'Guest'"><a routerLink="/logout">Logout</a><br /><br /></div>
-  <div *ngIf="email != 'Guest'"><a routerLink="/update">Update</a><br /><br /></div>
+  <div><p>Hello, {{firstName}}!<br />{{email}}</p></div>
+  <div *ngIf="firstName == 'Guest'"><a routerLink="/login">Login</a><br /><br /></div>
+  <div *ngIf="firstName == 'Guest'"><a routerLink="/register">Register</a><br /><br /></div>
+  <div *ngIf="firstName != 'Guest'"><a routerLink="/logout">Logout</a><br /><br /></div>
+  <div *ngIf="firstName != 'Guest'"><a routerLink="/update">Update</a><br /><br /></div>
   <br />
 </div>

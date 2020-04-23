@@ -1,18 +1,61 @@
 <app-header></app-header>
-<div class="pt-3 px-4" style="min-height:600px;">
-  <div class="container">
-    <div class="row">
-      <!-- Login Column -->
-      <div class="col">
-        <h2>Close A Ticket</h2>
-        <p>Must be the creator of ticket or an Administrator.</p>
-        <br />
-        <br />
-      </div>
-      <!-- Other Column-->
-      <div class="col">
-        <h2>column placeholder</h2>
-      </div>
+<div class="pt-3 px-4 text-center" style="min-height:600px;">
+  <h2>Close Ticket</h2>
+  <br />
+
+
+  <!--
+  <form (ngSubmit)="onSubmit()">
+       <div *ngIf="tickets.length > 0">
+      <ol>
+        <li *ngFor="let ticket of tickets">
+          == {{ ticket.title }} == (Status: {{ticket.completed}})
+          <br />
+          {{ticket.details}}
+          <br />Requested By: {{ticket.userRequesterName}}
+          <br />Assigned To: {{ticket.adminAssignedName}}
+          <br />Date Created: {{ticket.datetimeOpened}}
+          <br />Date Closed: {{ticket.datetimeClosed}}
+          <br />
+          <br />
+          <br />
+        </li>
+      </ol>
     </div>
-  </div>
+    <div *ngIf="tickets.length === 0">
+      no tickets found
+    </div>
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>    <label>
+      Search
+      <input type="text" [formControl]="search">
+    </label>    <p>
+    </p>
+    <p>
+      <button type="submit" [disabled]="!closeTicket.valid">Close</button>
+    </p>
+    <br />
+  </form>
+  -->
+
+
+  <input type="number" id="quantity" name="quantity" min="1" [formControl]="quantity">
+
+
+  <button type="button" (click)="this.intholder = quantity.value;onClick();">Preview</button>
+  <button type="button" (click)="closeTicket()">Submit</button>
+
+
+  {{this.intholder}}
+
+  <br /><br />
+  Title: {{tickets.title}}
+  <br />
+  Details: {{tickets.details}}
+  <br />
+  Requestor: {{tickets.userRequesterName}}
+
+
+
 </div>

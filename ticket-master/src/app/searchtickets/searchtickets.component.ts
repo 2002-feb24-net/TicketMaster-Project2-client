@@ -3,6 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
 import Ticket from '../models/ticket';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-searchtickets',
   templateUrl: './searchtickets.component.html',
