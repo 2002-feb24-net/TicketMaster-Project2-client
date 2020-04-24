@@ -16,12 +16,13 @@ export class CloseticketComponent implements OnInit {
 
   tickets: Ticket;
 
-  intholder = 1;
+  intholder = 0;
 
-
-
-
-  
+  temptitle: string;
+  tempdetails: string;
+  tempuserRequesterName: string;
+  tempAdminAssignedName: string;
+  tempStatus: string;
 
   constructor(
     private builder: FormBuilder,
@@ -61,6 +62,11 @@ export class CloseticketComponent implements OnInit {
       .then(
         ticket => {
           this.tickets = ticket;
+          this.temptitle = ticket.title;
+          this.tempdetails = ticket.details;
+          this.tempuserRequesterName = ticket.userRequesterName;
+          this.tempAdminAssignedName = ticket.adminAssignedName;
+          this.tempStatus = ticket.completed;
         }
     );
 

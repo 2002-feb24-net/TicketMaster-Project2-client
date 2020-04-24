@@ -8,10 +8,24 @@
   <br />
   <br />
   <div>Hello, {{firstName}}<span *ngIf="firstName != 'Guest'"> {{lastName}}</span>!<br />{{email}}</div><br />
-  <div *ngIf="firstName == 'Guest'"><a routerLink="/login">Login</a><br /><br /></div>
-  <div *ngIf="firstName == 'Guest'"><a routerLink="/register">Register</a><br /><br /></div>
-  <div *ngIf="firstName != 'Guest'"><a routerLink="/logout">Logout</a><br /><br /></div>
-  <div *ngIf="firstName != 'Guest'"><a routerLink="/update">Update</a><br /><br /></div>
+  <div class="btn blue btn-group btn-info" *ngIf="firstName == 'Guest'" routerLink="/login"><a class="text-white" routerLink="/login">Login</a><br /><br /></div><br />
+
+  <div class="btn blue btn-group btn-info" *ngIf="firstName == 'Guest'" routerLink="/register"><a class="text-white" routerLink="/register">Register</a><br /><br /></div>
+
+  <div class="btn blue btn-group btn-info" *ngIf="firstName != 'Guest'" routerLink="/logout"><a class="text-white" routerLink="/logout">Logout</a><br /><br /></div>
+  
+  <br />
+  <div routerLink="/changepassword" class="btn blue btn-group btn-info" *ngIf="this.intsupportLevel != 1 && this.intsupportLevel != 2 && this.intsupportLevel != 3 && this.lastName != ''">
+    <a class="text-white" routerLink="/changepassword">Change Password</a><br /><br />
+  </div>
+  <br />
+
+
+
+  <div routerLink="/adminportal/changeadminpassword" class="btn blue btn-group btn-info" *ngIf="this.intsupportLevel > 0">
+    <a class="text-white" routerLink="/adminportal/changeadminpassword">Change Admin Password</a><br /><br />
+  </div>
+  <br />
   <br />
 </div>
 <app-footer></app-footer>

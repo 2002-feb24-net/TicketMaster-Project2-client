@@ -17,6 +17,8 @@ import { AdminportalComponent } from './adminportal/adminportal.component';
 import { MyticketsComponent } from './mytickets/mytickets.component';
 import { AssignedticketsComponent } from './assignedtickets/assignedtickets.component';
 import { ReassignticketComponent } from './reassignticket/reassignticket.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ChangeadminpasswordComponent } from './changeadminpassword/changeadminpassword.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -35,7 +37,9 @@ const routes: Routes = [
   { path: 'adminportal', component: AdminportalComponent },
   { path: 'mytickets', component: MyticketsComponent },
   { path: 'assignedtickets', component: AssignedticketsComponent },
-  { path: 'reassignticket', component: ReassignticketComponent }
+  { path: 'reassignticket', component: ReassignticketComponent },
+  { path: 'changepassword', component: ChangepasswordComponent },
+  { path: 'adminportal/changeadminpassword', component: ChangeadminpasswordComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -74,5 +74,19 @@ export class ApiService {
   }
 
 
+  changePassword(userid: number, userpass: string, something: User) {
+    this.searchint = userid;
+    this.searchint2 = userpass;
+    return this.http.put<User>(`${this.baseUrl}api/users/${this.searchint},${this.searchint2}`, something)
+      .toPromise();
+  }
+
+
+  changeadminPassword(userid: number, userpass: string, something: Admin) {
+    this.searchint = userid;
+    this.searchint2 = userpass;
+    return this.http.put<Admin>(`${this.baseUrl}api/admins/${this.searchint},${this.searchint2}`, something)
+      .toPromise();
+  }
 
 }

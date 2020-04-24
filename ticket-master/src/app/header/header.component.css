@@ -10,3 +10,11 @@ nav {
   color:white;
   text-decoration: underline;
 }
+
+a {
+  font-family: 'Oswald', sans-serif;
+}
+
+* {
+  font-family: 'Oswald', sans-serif;
+}

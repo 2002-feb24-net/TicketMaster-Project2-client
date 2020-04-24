@@ -3,18 +3,18 @@ import { FormControl } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { FormBuilder } from '@angular/forms';
 import { ApiService } from '../api.service';
-import User from '../models/user';
+import Admin from '../models/admin';
 import floatingTicket from '../floatingTicket';
 import { Location } from '@angular/common';
 @Component({
-  selector: 'app-changepassword',
-  templateUrl: './changepassword.component.html',
-  styleUrls: ['./changepassword.component.css']
+  selector: 'app-changeadminpassword',
+  templateUrl: './changeadminpassword.component.html',
+  styleUrls: ['./changeadminpassword.component.css']
 })
-export class ChangepasswordComponent implements OnInit {
+export class ChangeadminpasswordComponent implements OnInit {
   pass = new FormControl('');
 
-  users: User;
+  admins: Admin;
 
   intholder: number;
   passholder: string;
@@ -24,7 +24,7 @@ export class ChangepasswordComponent implements OnInit {
   constructor(
     private builder: FormBuilder,
     private cookieService: CookieService,
-    public usersApi: ApiService,
+    public adminsApi: ApiService,
     private location: Location
   ) { }
   ngOnInit(): void {
@@ -34,11 +34,11 @@ export class ChangepasswordComponent implements OnInit {
 
 
 
-  changePassword() {
+  changeadminPassword() {
     this.strholder = this.cookieService.get('cookieID');
     this.intholder = parseInt(this.strholder); // + passholder
 
-    this.usersApi.changePassword(this.intholder, this.passholder, this.users);
+    this.adminsApi.changeadminPassword(this.intholder, this.passholder, this.admins);
     this.location.back();
   }
 

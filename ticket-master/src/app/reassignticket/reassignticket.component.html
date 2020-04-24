@@ -4,11 +4,10 @@
   <br />
 
 
-  TicketID: {{intholder}}&nbsp;AdminID: {{intholder2}}
-  <br />
 
   <br />
-  <button type="button" (click)="reassignTicket()">Submit</button>
+
+  <button class="btn blue btn-group btn-info" type="button" (click)="reassignTicket()">Submit</button>
   <br />
   <br />
 
@@ -29,27 +28,37 @@
   <div class="container">
     <div class="row">
       <!-- Register Column -->
+
       <div class="col">
-        <input type="number" id="quantity" name="quantity" min="1" [formControl]="quantity" value="22">
-        <button type="button" (click)="this.intholder = quantity.value;onClick();">Preview</button>
+        TicketID: {{intholder}}<br />
+
+        <input type="number" id="quantity" name="quantity" min="1" [formControl]="quantity">
+        <button class="btn blue btn-group btn-info" type="button" (click)="this.intholder = quantity.value;onClick();">Preview</button>
         <br /><br />
-        Title: {{tickets.title}}
-        <br />
-        Details: {{tickets.details}}
-        <br />
-        Requestor: {{tickets.userRequesterName}}
-        <br />
-        Assigned: {{tickets.adminAssignedName}}
-        <br />
-        Status: {{tickets.completed}}
+        {{error}}
+        <div *ngIf="intholder > 0">
+          <br /><br />
+          Title: {{this.temptitle}}
+          <br />
+          Details: {{this.tempdetails}}
+          <br />
+          Requestor: {{this.tempuserRequesterName}}
+          <br />
+          Assigned: {{this.tempAdminAssignedName}}
+          <br />
+          Status: {{this.tempStatus}}
+        </div>
       </div>
       <!-- Users/Admins Column-->
-      <div class="col">
-        <input type="number" id="quantity2" name="quantity2" min="1" [formControl]="quantity2" value="1">
-        <button type="button" (click)="this.intholder2 = quantity2.value;onClick2();">Preview</button>
+
+      <div class="col">      AdminID: {{intholder2}}<br />
+        <input type="number" id="quantity2" name="quantity2" min="1" max="3" [formControl]="quantity2" value="1">
+        <button class="btn blue btn-group btn-info" type="button" (click)="this.intholder2 = quantity2.value;onClick2();">Preview</button>
         <br /><br />
-        Admin: {{this.selectedAdmin}}
-        <br />
+        <div *ngIf="intholder2 > 0">
+          Admin: {{this.selectedAdmin}}
+          <br />
+        </div>
       </div>
     </div>
   </div>

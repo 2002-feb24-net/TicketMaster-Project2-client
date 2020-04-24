@@ -43,23 +43,22 @@
   <input type="number" id="quantity" name="quantity" min="1" [formControl]="quantity">
 
 
-  <button type="button" (click)="this.intholder = quantity.value;onClick();">Preview</button>
-  <button type="button" (click)="closeTicket()">Submit</button>
+  <button class="btn blue btn-group btn-info" type="button" (click)="this.intholder = quantity.value;onClick();">Preview</button>
+  <button class="btn blue btn-group btn-info" type="button" (click)="closeTicket()">Submit</button>
 
 
-  {{this.intholder}}
-
+<div *ngIf="intholder > 0">
   <br /><br />
-  Title: {{tickets.title}}
+  Title: {{this.temptitle}}
   <br />
-  Details: {{tickets.details}}
+  Details: {{this.tempdetails}}
   <br />
-  Requestor: {{tickets.userRequesterName}}
+  Requestor: {{this.tempuserRequesterName}}
   <br />
-  Assigned: {{tickets.adminAssignedName}}
+  Assigned: {{this.tempAdminAssignedName}}
   <br />
-  Status: {{tickets.completed}}
-
+  Status: {{this.tempStatus}}
+</div>
 
 </div>
 <app-footer></app-footer>

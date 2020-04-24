@@ -27,6 +27,7 @@ import { MyticketsComponent } from './mytickets/mytickets.component';
 import { AssignedticketsComponent } from './assignedtickets/assignedtickets.component';
 import { ReassignticketComponent } from './reassignticket/reassignticket.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ChangeadminpasswordComponent } from './changeadminpassword/changeadminpassword.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -62,6 +63,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     AssignedticketsComponent,
     ReassignticketComponent,
     ChangepasswordComponent,
+    ChangeadminpasswordComponent,
   ],
   bootstrap: [AppComponent]
 })

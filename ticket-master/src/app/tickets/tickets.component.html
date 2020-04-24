@@ -8,18 +8,20 @@
   <br />
   <br />
   <div *ngIf="this.intsupportLevel > 0">
-    <a routerLink="/closeticket">Close</a><br /><br />
-    <a routerLink="/assignedtickets">Assigned</a><br /><br />
-    <a routerLink="/reassignticket">Reassign</a><br /><br />
-    <a routerLink="/alltickets">All Tickets</a><br /><br />
+
+
+    <a class="btn blue btn-group btn-info" routerLink="/closeticket">Close</a><br />
+    <a class="btn blue btn-group btn-info" routerLink="/assignedtickets">Assigned</a><br />
+    <a class="btn blue btn-group btn-info" routerLink="/reassignticket">Reassign</a><br />
+    <a class="btn blue btn-group btn-info" routerLink="/alltickets">All Tickets</a><br />
   </div>
   <div *ngIf="this.lastName == ''">
     <p>Please sign-in.</p>
   </div>
 
   <div *ngIf="this.intsupportLevel != 1 && this.intsupportLevel != 2 && this.intsupportLevel != 3 && this.lastName != ''">
-    <a routerLink="/openticket">Open</a><br /><br />
-    <a routerLink="/mytickets">My Tickets</a><br /><br />
+    <a class="btn blue btn-group btn-info" routerLink="/openticket">Open</a><br /><br />
+    <a class="btn blue btn-group btn-info" routerLink="/mytickets">My Tickets</a><br /><br />
   </div>
   <!--<a routerLink="/updateticket">Update</a><br /><br />-->
   <br />

@@ -11,6 +11,8 @@ export class AccountComponent implements OnInit {
   email = this.cookieService.get('cookieEmail');
   firstName = this.cookieService.get('cookieFirstName');
   lastName = this.cookieService.get('cookieLastName');
+  supportLevel = this.cookieService.get('cookieSupportLevel');
+  intsupportLevel = parseInt(this.supportLevel);
   constructor(private cookieService: CookieService) { }
   ngOnInit(): void {
   }
