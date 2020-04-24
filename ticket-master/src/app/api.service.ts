@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
   private baseUrl = environment.baseUrl;
   private searchint;
+  private searchint2;
   private email;
   private password;
 
@@ -50,8 +51,6 @@ export class ApiService {
     this.searchint = output;
     return this.http.put<Ticket>(`${this.baseUrl}api/tickets/${this.searchint}`, something)
       .toPromise();
-
-
   }
 
 
@@ -64,5 +63,16 @@ export class ApiService {
     return this.http.get<Admin>(`${this.baseUrl}api/admins/${email},${password}`)
       .toPromise();
   }
+
+
+
+  reassignTicket(outputticket: number, outputadmin: number, something: Ticket) {
+    this.searchint = outputticket;
+    this.searchint2 = outputadmin;
+    return this.http.put<Ticket>(`${this.baseUrl}api/tickets/${this.searchint},${this.searchint2}`, something)
+      .toPromise();
+  }
+
+
 
 }

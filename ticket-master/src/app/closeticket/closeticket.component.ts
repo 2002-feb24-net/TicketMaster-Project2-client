@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { ApiService } from '../api.service';
 import Ticket from '../models/ticket';
 import floatingTicket from '../floatingTicket';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-closeticket',
   templateUrl: './closeticket.component.html',
@@ -25,7 +26,8 @@ export class CloseticketComponent implements OnInit {
   constructor(
     private builder: FormBuilder,
     private cookieService: CookieService,
-    public usersApi: ApiService
+    public usersApi: ApiService,
+    private location: Location
   ) { }
   ngOnInit(): void {
 
@@ -48,6 +50,7 @@ export class CloseticketComponent implements OnInit {
 
   closeTicket() {
     this.usersApi.closeTicket(this.intholder, this.tickets);
+    this.location.back();
   }
 
 

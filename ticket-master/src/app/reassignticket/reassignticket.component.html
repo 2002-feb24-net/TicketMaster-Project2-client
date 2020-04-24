@@ -1,1 +1,66 @@
-<p>reassignticket works!</p>
+<app-header></app-header>
+<div class="pt-3 px-4 text-center" style="min-height:600px;">
+  <h2>Reassign Ticket</h2>
+  <br />
+
+
+  TicketID: {{intholder}}&nbsp;AdminID: {{intholder2}}
+  <br />
+
+  <br />
+  <button type="button" (click)="reassignTicket()">Submit</button>
+  <br />
+  <br />
+
+
+
+
+  <br /><br />
+
+
+
+
+
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <!-- Register Column -->
+      <div class="col">
+        <input type="number" id="quantity" name="quantity" min="1" [formControl]="quantity" value="22">
+        <button type="button" (click)="this.intholder = quantity.value;onClick();">Preview</button>
+        <br /><br />
+        Title: {{tickets.title}}
+        <br />
+        Details: {{tickets.details}}
+        <br />
+        Requestor: {{tickets.userRequesterName}}
+        <br />
+        Assigned: {{tickets.adminAssignedName}}
+        <br />
+        Status: {{tickets.completed}}
+      </div>
+      <!-- Users/Admins Column-->
+      <div class="col">
+        <input type="number" id="quantity2" name="quantity2" min="1" [formControl]="quantity2" value="1">
+        <button type="button" (click)="this.intholder2 = quantity2.value;onClick2();">Preview</button>
+        <br /><br />
+        Admin: {{this.selectedAdmin}}
+        <br />
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+<app-footer></app-footer>
