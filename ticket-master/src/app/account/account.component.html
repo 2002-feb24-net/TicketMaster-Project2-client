@@ -13,21 +13,21 @@
 
 
 
-  <a class="btn blue btn-group btn-info text-white" *ngIf="firstName == 'Guest'" routerLink="/register">Register<br /><br /></a>
+  <a class="btn blue btn-group btn-info text-white" *ngIf="firstName == 'Guest'" routerLink="/register">Register</a><br /><br />
 
-  <a class="btn blue btn-group btn-info text-white" *ngIf="firstName != 'Guest'" routerLink="/logout">Logout</a><br /><br />testext
+  <a class="btn blue btn-group btn-info text-white" *ngIf="firstName != 'Guest'" routerLink="/logout">Logout</a><br /><br />
 
   <br />
   <a routerLink="/changepassword" class="btn blue btn-group btn-info text-white" *ngIf="this.intsupportLevel != 1 && this.intsupportLevel != 2 && this.intsupportLevel != 3 && this.lastName != ''">
-    Change Password<br /><br />
-  </a>
+    Change Password
+  </a><br /><br />
   <br />
 
 
 
   <a routerLink="/adminportal/changeadminpassword" class="btn blue btn-group btn-info text-white" *ngIf="this.intsupportLevel > 0">
-    Change Admin Password<br /><br />
-  </a>
+    Change Admin Password
+  </a><br /><br />
   <br />
   <br />
 </div>
