@@ -12,5 +12,7 @@ describe('CookieServiceService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+    const cookievalue = 'Hey there, i hope you are enjoying this article';
+    this.cookieValue = this.cookieService.get('cookie-name');
   });
 });

@@ -67,7 +67,6 @@ export class ReassignticketComponent implements OnInit {
           this.tempAdminAssignedName = ticket.adminAssignedName;
           this.tempStatus = ticket.completed;
         },
-
         error => {
           this.handleError(error);
           this.temptitle = "";
@@ -80,11 +79,7 @@ export class ReassignticketComponent implements OnInit {
   }
 
 
-
   onClick2() {
-
-
-
     var admin1 = "Paul Stewart";
     var admin2 = "Morgan Hay";
     var admin3 = "Shawn Halcomb"
@@ -98,8 +93,6 @@ export class ReassignticketComponent implements OnInit {
       this.selectedAdmin = admin3;
     }
   }
-
-  
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -112,9 +105,7 @@ export class ReassignticketComponent implements OnInit {
     // return an observable with a user-facing error message
     // this.error = 'Something bad happened; please try again later.';
   }
-
   resetError() {
     this.error = undefined;
   }
-
 }

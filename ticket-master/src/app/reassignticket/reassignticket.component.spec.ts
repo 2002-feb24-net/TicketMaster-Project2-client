@@ -2,9 +2,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReassignticketComponent } from './reassignticket.component';
 
+
+
 describe('ReassignticketComponent', () => {
   let component: ReassignticketComponent;
   let fixture: ComponentFixture<ReassignticketComponent>;
+
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -22,4 +26,7 @@ describe('ReassignticketComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+
+
+}
+);
