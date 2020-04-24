@@ -15,6 +15,8 @@
         <div *ngIf="checked === false"><app-admins></app-admins></div>
         <button *ngIf="checked === false" type="button" id="button1" class="btn blue btn-group btn-info ml-4" (click)="checked = true;">View Users</button>
         &nbsp;
+
+
         <button *ngIf="checked === true" type="button" id="button2" class="btn blue btn-group btn-info" (click)="checked = false;">View Administrators</button>
       </div>
     </div>
