@@ -47,6 +47,7 @@ export class MyticketsComponent implements OnInit {
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       this.error = `An error occurred: ${error.error.message}`;
+      console.log(error.error.message);
     } else {
       this.error = `Backend returned code ${error.status}, body was: ${error.error}`;
     }

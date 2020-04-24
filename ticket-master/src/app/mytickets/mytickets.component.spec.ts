@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyticketsComponent } from './mytickets.component';
+import { inject, ErrorHandler } from '@angular/core';
 
 describe('MyticketsComponent', () => {
   let component: MyticketsComponent;
@@ -22,4 +23,9 @@ describe('MyticketsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create', () => {
+    expect(ErrorHandler).toBeTruthy();
+  });
+
 });
