@@ -15,10 +15,11 @@
 
   <a class="btn blue btn-group btn-info text-white" *ngIf="firstName == 'Guest'" routerLink="/register">Register<br /><br /></a>
 
-  <a class="btn blue btn-group btn-info text-white" *ngIf="firstName != 'Guest'" routerLink="/logout">Logout<br /><br /></a>
+  <a class="btn blue btn-group btn-info text-white" *ngIf="firstName != 'Guest'" routerLink="/logout">Logout</a><br /><br />testext
 
   <br />
-  <a routerLink="/changepassword" class="btn blue btn-group btn-info text-white" *ngIf="this.intsupportLevel != 1 && this.intsupportLevel != 2 && this.intsupportLevel != 3 && this.lastName != ''">Change Password<br /><br />
+  <a routerLink="/changepassword" class="btn blue btn-group btn-info text-white" *ngIf="this.intsupportLevel != 1 && this.intsupportLevel != 2 && this.intsupportLevel != 3 && this.lastName != ''">
+    Change Password<br /><br />
   </a>
   <br />
 
