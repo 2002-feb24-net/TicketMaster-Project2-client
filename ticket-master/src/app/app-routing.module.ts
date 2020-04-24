@@ -13,6 +13,9 @@ import { UpdateticketComponent } from './updateticket/updateticket.component';
 import { SearchticketsComponent } from './searchtickets/searchtickets.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UpdateComponent } from './update/update.component';
+import { AdminportalComponent } from './adminportal/adminportal.component';
+import { MyticketsComponent } from './mytickets/mytickets.component';
+import { AssignedticketsComponent } from './assignedtickets/assignedtickets.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -27,7 +30,10 @@ const routes: Routes = [
   { path: 'alltickets', component: SearchticketsComponent },
   { path: 'updateticket', component: UpdateticketComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'update', component: UpdateComponent }
+  { path: 'update', component: UpdateComponent },
+  { path: 'adminportal', component: AdminportalComponent },
+  { path: 'mytickets', component: MyticketsComponent },
+  { path: 'assignedtickets', component: AssignedticketsComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

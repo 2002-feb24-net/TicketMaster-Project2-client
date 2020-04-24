@@ -5,25 +5,25 @@
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <label>
       First Name:
-      <input type="text" formControlName="firstName">
+      <input type="text" formControlName="firstName" required>
     </label>
     <br />
     <br />
     <label>
       Last Name:
-      <input type="text" formControlName="lastName">
+      <input type="text" formControlName="lastName" required>
     </label>
     <br />
     <br />
     <label>
       Email Address:
-      <input type="text" formControlName="email">
+      <input type="text" formControlName="email" required>
     </label>
     <br />
     <br />
     <label>
       Password:
-      <input type="password" formControlName="password">
+      <input type="password" formControlName="password" required>
     </label>
     <br />
     <br />
@@ -31,5 +31,7 @@
       <button type="submit" [disabled]="!registerForm.valid">Submit</button>
     </p>
     <br />
+    {{error}}
   </form>
 </div>
+<app-footer></app-footer>

@@ -10,6 +10,7 @@ export class AccountComponent implements OnInit {
   faCogs = faCogs;
   email = this.cookieService.get('cookieEmail');
   firstName = this.cookieService.get('cookieFirstName');
+  lastName = this.cookieService.get('cookieLastName');
   constructor(private cookieService: CookieService) { }
   ngOnInit(): void {
   }

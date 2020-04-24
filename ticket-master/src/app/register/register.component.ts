@@ -13,6 +13,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  error: string;
   registerForm = this.builder.group({
     id: [''],
     firstName: [''],
@@ -24,7 +25,6 @@ export class RegisterComponent implements OnInit {
     email: [''],
     password: [''],
   })
-  error: string | undefined;
   notes: User[] = [];
   constructor(
     private usersApi: ApiService,
@@ -46,17 +46,50 @@ export class RegisterComponent implements OnInit {
         password: this.registerForm.get('password')?.value
     };
 
-    this.usersApi.createUser(newUser);
-    //this.cookieService.set('cookieID', newUser.id.toString());
-    this.cookieService.set('cookieFirstName', newUser.firstName);
-    this.cookieService.set('cookieLastName', newUser.lastName);
-    this.cookieService.set('cookieFullName', newUser.firstName + " " + newUser.lastName);
-    this.cookieService.set('cookieAddress', newUser.address);
-    this.cookieService.set('cookieCity', newUser.city);
-    this.cookieService.set('cookieState', newUser.state);
-    this.cookieService.set('cookiePhoneNumber', newUser.phoneNumber);
-    this.cookieService.set('cookieEmail', newUser.email);
-    this.cookieService.set('cookiePassword', newUser.password);
-      this.location.back();
+    return this.usersApi.createUser(newUser)
+      .then(
+        user => {
+
+          this.resetError();
+          //this.cookieService.set('cookieID', newUser.id.toString());
+          this.cookieService.set('cookieFirstName', newUser.firstName);
+          this.cookieService.set('cookieLastName', newUser.lastName);
+          this.cookieService.set('cookieFullName', newUser.firstName + " " + newUser.lastName);
+          this.cookieService.set('cookieAddress', newUser.address);
+          this.cookieService.set('cookieCity', newUser.city);
+          this.cookieService.set('cookieState', newUser.state);
+          this.cookieService.set('cookiePhoneNumber', newUser.phoneNumber);
+          this.cookieService.set('cookieEmail', newUser.email);
+          this.cookieService.set('cookiePassword', newUser.password);
+          this.location.back();
+        },
+
+        error => {
+          this.handleError(error);
+          console.log(error);
+        }
+        );
+    // error
+
+
+
+  }
+
+
+  handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      this.error = `An error occurred: ${error.error.message}`;
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      this.error = `${error.error}`;
+    }
+    // return an observable with a user-facing error message
+    // this.error = 'Something bad happened; please try again later.';
+  }
+
+  resetError() {
+    this.error = undefined;
   }
 }

@@ -5,14 +5,14 @@ import { Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { Location } from '@angular/common';
 import { ApiService } from '../api.service';
-import User from '../models/user';
+import Admin from '../models/admin';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-adminportal',
+  templateUrl: './adminportal.component.html',
+  styleUrls: ['./adminportal.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AdminportalComponent implements OnInit {
   loginForm = this.builder.group({
     email: ['', Validators.required],
     password: ['', Validators.required]
@@ -20,31 +20,30 @@ export class LoginComponent implements OnInit {
   })
   email1: string;
   password1: string;
-    testUser2: User;
-    error: string;
+  testAdmin2: Admin;
+  error: string;
+  firstName = this.cookieService.get('cookieFirstName');
 
 
   constructor(
     private builder: FormBuilder,
     private cookieService: CookieService,
     private location: Location,
-    private userApi: ApiService
-    ) { }
+    private adminApi: ApiService
+  ) { }
   ngOnInit(): void {
   }
   onSubmit() {
 
-    const testUser: User = {
+    const testAdmin: Admin = {
       firstName: this.loginForm.get('firstName')?.value,
+      currentTicket: this.loginForm.get('currentTicket')?.value,
+      supportLevel: this.loginForm.get('supportLevel')?.value,
       lastName: this.loginForm.get('lastName')?.value,
-      address: this.loginForm.get('address')?.value,
-      city: this.loginForm.get('city')?.value,
-      state: this.loginForm.get('state')?.value,
-      phoneNumber: this.loginForm.get('phone')?.value,
       email: this.loginForm.get('email')?.value,
       password: this.loginForm.get('password')?.value
     };
-    //const testUser2: User = {
+    //const testAdmin2: Admin = {
     //  firstName: "",
     //  lastName: "",
     //  address: "",
@@ -57,29 +56,28 @@ export class LoginComponent implements OnInit {
     //};
 
 
-    return this.userApi.getUser(testUser.email, testUser.password)
+    return this.adminApi.getAdmin(testAdmin.email, testAdmin.password)
       .then(
-        user => {
-          this.testUser2 = user;
+        admin => {
+          this.testAdmin2 = admin;
           this.resetError();
-          this.cookieService.set('cookieID', user.id.toString());
-          this.cookieService.set('cookieFirstName', user.firstName);
-          this.cookieService.set('cookieLastName', user.lastName);
-          this.cookieService.set('cookieFullName', user.firstName + " " + user.lastName);
-          this.cookieService.set('cookieAddress', user.address);
-          this.cookieService.set('cookieCity', user.city);
-          this.cookieService.set('cookieState', user.state);
-          this.cookieService.set('cookiePhoneNumber', user.phoneNumber);
-          this.cookieService.set('cookieEmail', user.email);
-          this.cookieService.set('cookiePassword', user.password);
-          this.location.back();
-          console.warn(this.testUser2);
+          this.cookieService.set('cookieID', admin.id.toString());
+          this.cookieService.set('cookieFirstName', admin.firstName);
+          this.cookieService.set('cookieLastName', admin.lastName);
+          this.cookieService.set('cookieFullName', admin.firstName + " " + admin.lastName);
+          this.cookieService.set('cookieEmail', admin.email);
+          this.cookieService.set('cookiePassword', admin.password);
+          this.cookieService.set('cookieSurrentTicket', admin.currentTicket);
+          this.cookieService.set('cookieSupportLevel', admin.supportLevel.toString())
+          // Simulate a mouse click:
+          window.location.href = "/account";
+          console.warn(this.testAdmin2);
         },
 
         error => {
           this.handleError(error);
         } // error
-    );
+      );
   }
 
   handleError(error: HttpErrorResponse) {
@@ -91,7 +89,7 @@ export class LoginComponent implements OnInit {
       // The response body may contain clues as to what went wrong,
       this.error = `${error.error}`;
     }
-    // return an observable with a user-facing error message
+    // return an observable with a admin-facing error message
     // this.error = 'Something bad happened; please try again later.';
   }
 

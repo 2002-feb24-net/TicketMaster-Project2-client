@@ -32,6 +32,8 @@ export class LogoutComponent implements OnInit {
     this.cookieService.set('cookiePhoneNumber', "");
     this.cookieService.set('cookieEmail', "");
     this.cookieService.set('cookiePassword', "");
+    this.cookieService.set('cookieSupportLevel', "");
+    this.cookieService.set('cookieCurrentTicket', "");
     this.location.back();
   }
 }

@@ -60,4 +60,9 @@ export class ApiService {
       .toPromise();
   }
 
+  getAdmin(email: string, password: string) {
+    return this.http.get<Admin>(`${this.baseUrl}api/admins/${email},${password}`)
+      .toPromise();
+  }
+
 }

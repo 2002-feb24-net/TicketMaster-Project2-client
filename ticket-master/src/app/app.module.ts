@@ -22,6 +22,10 @@ import { UpdateticketComponent } from './updateticket/updateticket.component';
 import { SearchticketsComponent } from './searchtickets/searchtickets.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UpdateComponent } from './update/update.component';
+import { AdminportalComponent } from './adminportal/adminportal.component';
+import { MyticketsComponent } from './mytickets/mytickets.component';
+import { AssignedticketsComponent } from './assignedtickets/assignedtickets.component';
+import { ReassignticketComponent } from './reassignticket/reassignticket.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -52,6 +56,10 @@ import { UpdateComponent } from './update/update.component';
     SearchticketsComponent,
     LogoutComponent,
     UpdateComponent,
+    AdminportalComponent,
+    MyticketsComponent,
+    AssignedticketsComponent,
+    ReassignticketComponent,
   ],
   bootstrap: [AppComponent]
 })
